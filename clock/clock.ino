@@ -24,7 +24,7 @@ void loop()
 {
   if (digitalRead(buttonStop) == LOW)
   {
-    clockOn=!clockOn
+    clockOn=!clockOn;
   }
   if (digitalRead(buttonManual) == LOW)
   {
