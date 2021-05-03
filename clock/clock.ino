@@ -26,7 +26,7 @@ void loop()
   {
     clockOn=!clockOn
   }
-  if (digitalRead(buttonBpin) == LOW)
+  if (digitalRead(buttonManual) == LOW)
   {
     clockOn=false;
     sendPulse();
