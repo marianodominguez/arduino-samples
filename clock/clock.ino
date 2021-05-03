@@ -13,7 +13,7 @@ void setup()
   pinMode(buttonManual, INPUT_PULLUP);  
 }
 
-void sendPulse(()
+void sendPulse()
 {
   digitalWrite(clockPin, HIGH);
   sleep(500)
