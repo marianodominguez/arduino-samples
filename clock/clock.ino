@@ -1,26 +1,39 @@
 //arduino clock
 
-int ledPin = 5;
-int buttonApin = 9;
-int buttonBpin = 8;
+int clockPin = 5;
+int buttonStop = 9;
+int buttonManual = 8;
 
-byte leds = 0;
+boolean clockOn = true;
 
 void setup() 
 {
-  pinMode(ledPin, OUTPUT);
-  pinMode(buttonApin, INPUT_PULLUP);  
-  pinMode(buttonBpin, INPUT_PULLUP);  
+  pinMode(clockPin, OUTPUT);
+  pinMode(buttonStop, INPUT_PULLUP);  
+  pinMode(buttonManual, INPUT_PULLUP);  
+}
+
+void sendPulse(()
+{
+  digitalWrite(clockPin, HIGH);
+  sleep(500)
+  digitalWrite(clockPin, LOW);    
 }
 
 void loop() 
 {
-  if (digitalRead(buttonApin) == LOW)
+  if (digitalRead(buttonStop) == LOW)
   {
-    digitalWrite(ledPin, HIGH);
+    clockOn=!clockOn
   }
   if (digitalRead(buttonBpin) == LOW)
   {
-    digitalWrite(ledPin, LOW);
+    clockOn=false;
+    sendPulse();
+  }
+
+  if (clockOn) 
+  {
+    sendPulse();
   }
 }
