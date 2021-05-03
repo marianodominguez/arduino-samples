@@ -16,7 +16,7 @@ void setup()
 void sendPulse()
 {
   digitalWrite(clockPin, HIGH);
-  sleep(500)
+  delay(500);
   digitalWrite(clockPin, LOW);    
 }
 
