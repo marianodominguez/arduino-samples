@@ -24,10 +24,12 @@ void loop()
 {
   if (digitalRead(buttonStop) == LOW)
   {
-    clockOn=!clockOn;
+    delay(100);
+    clockOn =! clockOn;
   }
   if (digitalRead(buttonManual) == LOW)
   {
+    delay(100);
     clockOn=false;
     sendPulse();
   }
