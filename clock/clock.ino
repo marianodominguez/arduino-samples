@@ -1,4 +1,4 @@
-#arduino clock
+//arduino clock
 
 int ledPin = 5;
 int buttonApin = 9;
